@@ -15,12 +15,11 @@ class CreateBusinesspeopleTable extends Migration
     {
         Schema::create('businesspeople', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('person_id');
             $table->string('name');
-            $table->bigInteger('phone');
+            $table->bigInteger('phone')->unique();
             $table->string('state');
             $table->string('city');
-            $table->foreign('person_id')->references('id')->on('businesspeople')->onDelete('cascade');
+            $table->string('entrepreneur')->nullable();
             $table->timestamps();
         });
     }

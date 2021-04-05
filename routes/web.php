@@ -15,8 +15,7 @@ use App\Http\Controllers\BusinesspersonController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', [BusinesspersonController::class, 'index'])->name('businessperson.index');
+Route::get('/', [BusinesspersonController::class, 'index'])->name('main.index');
+Route::post('/businessperson/store', [BusinesspersonController::class, 'store'])->name('businessperson.store');
+Route::get('/businessperson/show/{businessperson}', [BusinesspersonController::class, 'show'])->name('businessperson.show');
+Route::delete('/businessperson/destroy/{businessperson}', [BusinesspersonController::class, 'destroy'])->name('businessperson.destroy');

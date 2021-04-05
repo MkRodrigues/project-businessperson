@@ -10,10 +10,10 @@ class Businessperson extends Model
     use HasFactory;
 
     protected $fillable = [
-        'person_id',
         'name',
         'phone',
         'state',
-        'city'
-    ]
+        'city',
+        'entrepreneur',
+    ];
 }

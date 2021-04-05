@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <style>
-        .teste {
+        .space {
             height: 100vh;
             padding-top: 100px;
         }
