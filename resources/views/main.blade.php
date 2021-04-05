@@ -42,13 +42,17 @@
                     <div class="form-group col">
                         <label for="">Estado</label>
                         <select class="form-control" name="state" id="">
-                            <option value="SP">São Paulo</option>
+                            @foreach($states as $state)
+                                <option value="{{ $state->uf }}">{{ $state->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group col">
                         <label for="">Cidade</label>
                         <select class="form-control" name="city" id="">
-                            <option value="Sao Paulo">São Paulo</option>
+                            @foreach($cities as $city)
+                                <option value="{{ $city->name }}">{{ $city->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -99,7 +103,8 @@
                         <td>{{ $item->created_at }}</td>
                         <td>{{ $item->entrepreneur }}</td>
                         <td>
-                            <a href="{{route('businessperson.show', $item->id)}}" class="btn btn-primary btn-sm">Ver rede</a>
+                            <a href="{{ route('businessperson.show', $item->id) }}"
+                                class="btn btn-primary btn-sm">Ver rede</a>
                         </td>
                         <td>
                             <form action="{{ route('businessperson.destroy', $item->id) }}"
